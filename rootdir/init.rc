@@ -15,6 +15,7 @@ loglevel 3
     export EXTERNAL_STORAGE /mnt/sdcard
     export ASEC_MOUNTPOINT /mnt/asec
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
+    export HOME /sdcard
 
 # Backward compatibility
     symlink /system/etc /etc
