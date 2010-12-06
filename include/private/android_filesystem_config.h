@@ -64,6 +64,8 @@
 #define AID_NET_RAW       3004  /* can create raw INET sockets */
 #define AID_NET_ADMIN     3005  /* can configure interfaces and routing tables. */
 
+#define AID_GEM           9001  /* IT'S OVER 9000!!!! */
+
 #define AID_MISC          9998  /* access to misc storage */
 #define AID_NOBODY        9999
 
@@ -103,6 +105,7 @@ static struct android_id_info android_ids[] = {
     { "inet",      AID_INET, },
     { "net_raw",   AID_NET_RAW, },
     { "net_admin", AID_NET_ADMIN, },
+    { "gem",       AID_GEM, },
     { "misc",      AID_MISC, },
     { "nobody",    AID_NOBODY, },
 };
@@ -137,6 +140,7 @@ static struct fs_path_config android_dirs[] = {
     { 00750, AID_ROOT,   AID_SHELL,  "sbin" },
     { 00755, AID_ROOT,   AID_SHELL,  "system/bin" },
     { 00755, AID_ROOT,   AID_SHELL,  "system/xbin" },
+    { 00755, AID_ROOT,   AID_ROOT,   "system/etc/init.d" },
     { 00755, AID_ROOT,   AID_ROOT,   "system/etc/ppp" },
     { 00777, AID_ROOT,   AID_ROOT,   "sdcard" },
     { 00755, AID_ROOT,   AID_ROOT,   0 },
@@ -162,6 +166,7 @@ static struct fs_path_config android_files[] = {
     { 00444, AID_NET_BT,    AID_NET_BT,    "system/etc/bluetooth/blacklist.conf" },
     { 00640, AID_SYSTEM,    AID_SYSTEM,    "system/etc/bluetooth/auto_pairing.conf" },
     { 00444, AID_RADIO,     AID_AUDIO,     "system/etc/AudioPara4.csv" },
+    { 00555, AID_ROOT,      AID_ROOT,      "system/etc/init.d/*" },
     { 00555, AID_ROOT,      AID_ROOT,      "system/etc/ppp/*" },
     { 00644, AID_SYSTEM,    AID_SYSTEM,    "data/app/*" },
     { 00644, AID_SYSTEM,    AID_SYSTEM,    "data/app-private/*" },
